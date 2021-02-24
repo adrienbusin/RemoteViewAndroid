@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fr.busin.appb">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppB">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.ReceiveServiceMessenger"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="fr.busin.appb.messaging" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".remoteview.AppRemoteViewService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="fr.busin.appb.action.REMOTE_VIEW" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
